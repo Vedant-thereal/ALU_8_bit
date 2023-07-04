@@ -1,3 +1,4 @@
+`include "bitwise_and.v"
 module testbench_bitand();
     reg [7:0]a,b;
     reg clk;
