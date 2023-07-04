@@ -1,3 +1,4 @@
+`include "divider.v"
 module testbench_divider();
     reg [7:0]a,b;
     reg clk;
