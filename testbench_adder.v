@@ -1,13 +1,18 @@
-module jdoodle;
-  reg [7:0]a,b;
-  wire [7:0]s;
-  wire cout;
-  wordaddsub add (.x(a),.y(b),.sum(s),.cot(cout));
+module testbench_adder();
+    reg [7:0]a,b;
+    reg clk;
+    wire cot,done;
+    wire [7:0]out;
+    syncaddsub w(.x(a),.y(b),.mode(1'b0),.clk(clk),.done(done),.cout(cot),.sum(out));
     initial begin
-        #10 a=8'b00000011;
-        #10 b=8'b00000001;
-        #20 $display("%b %b %b %b",s[0],s[1],s[2],cout);
-        #30 $display ("Welcome to JDoodle!!!");
-        #100 $finish;
+        #0 a=8'b00000111;
+        #0 b=8'b00000010;
+        #0 clk=1'b0;
+        repeat(10) begin
+         #5 clk=~clk;
+        end
+        #20 $display (out);
+        #0 $display(cot)
+        $finish;
     end
 endmodule
