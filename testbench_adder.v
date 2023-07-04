@@ -1,3 +1,4 @@
+`include "adder.v"
 module testbench_adder();
     reg [7:0]a,b;
     reg clk;
