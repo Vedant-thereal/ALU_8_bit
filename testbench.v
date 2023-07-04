@@ -1,12 +1,17 @@
-module jdoodle;
-   reg [7:0]a,b;
-   wire [7:0]out;
-   bitand b1(.a(a),.b(b),.out(out));
+module testbench_multiplier();
+    reg [7:0]a,b;
+    reg clk;
+    wire [15:0]s;
+    wire done;
+    multiply m1(.a(a),.b(b),.clk(clk),.op(s),.done(done));
     initial begin
-        #10 a=8'b00000011;
-        #10 b=8'b00000010;
-        #20 $display("%b %b",out[0],out[1]);
-        $display ("Welcome to JDoodle!!!");
-        $finish;
+        #0 a=8'b10000011;
+        #0 b=8'b10000010;
+        #0 clk=0;
+        repeat(20) begin
+         #5 clk=~clk;
+        end
+        #50 $display (s);
+        #100 $finish;
     end
 endmodule
