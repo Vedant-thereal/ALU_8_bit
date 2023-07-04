@@ -1,3 +1,4 @@
+`include "multiplier.v"
 module testbench_multiplier();
     reg [7:0]a,b;
     reg clk;
