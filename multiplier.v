@@ -1,24 +1,23 @@
-module multiplier(
-  input [7:0]a,b,
-  input clk,
-  output [7:0]mul,
-  output car,dn
+module multiply(
+ input [7:0]a,b,
+ input clk,
+ output [15:0]op,
+ output done
 );
-  reg inp=[3:0]a;
-  reg acc=4'b0;
-  wire [7:0]s;
-  reg done=0
-  always(@((posedge clk) begin
-    if(!done) begin
-    acc=acc+
-     {car,[6:0]mul}=
+ reg [15:0]acc1=16'b0;
+ reg [15:0]acc2=16'b0;
+ reg [3:0]cnt=4'b0;
+ assign done=cnt[3];
+ assign op=acc1;
+ always @(posedge clk) begin 
+  if(~done) begin
+   acc2={{a&({8{b[cnt]}})},8'b0};
+   acc1=acc1+acc2;
+   acc1=acc1>>1;
+   cnt=cnt+1;
+  end
   
-
-
-
-module jdoodle;
-    initial begin
-        $display ("Welcome to JDoodle!!!");
-        $finish;
-    end
+ end
 endmodule
+
+
