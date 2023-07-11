@@ -14,5 +14,5 @@ The ALU supports 8 operations, viz:
 
 Addition and Subtraction are performed using conventional Full-Adders with mode selection.\
 Multiplication is performed by using addition and register level bit shifts.Two accumulator registers are used(acc1 and acc2) initialized to 0 before operation starts.Then for i=0 to 7(Not using 'for' loops in verilog code) clock cycles, acc1 is initialized to b[i]&(a) padded with 4 zeros to the right and added to acc2, after this operation acc2 is shifted right by 1 bit.\
-Division is performed using Restoring Divsion Algorithm
-All the bitwise operations are performed using the usual primitive gates in Verilog
+Division is performed using Restoring Divsion Algorithm\
+All the bitwise operations are performed using the usual primitive gates in Verilog\
