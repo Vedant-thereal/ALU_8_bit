@@ -2,6 +2,7 @@
 This project is based on the Verilog implementation of a simple 8-bit unsigned Arithmetic Logic Unit(ALU).\
 The ALU supports 8 operations, viz:
 |Operation     | Input Size      | Output Size                               | MUX i/p for command |
+|--------------|-----------------|-------------------------------------------|---------------------|
 |Addition      | 2 8-bit numbers | one 8-bit sum and one 1-bit carry         | 000                 |
 |Subtration    | 2 8-bit numbers | one 8-bit difference                      | 001                 |
 |Multiplication| 2 8-bit numbers | one 8-bit product                         | 010                 |
