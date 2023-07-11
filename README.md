@@ -5,7 +5,7 @@ The ALU supports 8 operations, viz:
 |--------------|-----------------|-------------------------------------------|---------------------|
 |Addition      | 2 8-bit numbers | one 8-bit sum and one 1-bit carry         | 000                 |
 |Subtration    | 2 8-bit numbers | one 8-bit difference                      | 001                 |
-|Multiplication| 2 8-bit numbers | one 8-bit product                         | 010                 |
+|Multiplication| 2 8-bit numbers | one 16-bit product                         | 010                 |
 |Division      | 2 8-bit numbers | one 8-bit quotient and one 8-bit remainder| 011                 |
 |Bitwise AND   | 2 8-bit numbers | one 8-bit AND                             | 100                 |
 |Bitwise OR    | 2 8-bit numbers | one 8-bit AND                             | 101                 |
